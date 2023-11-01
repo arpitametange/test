@@ -65,7 +65,7 @@ job=[
   },
   {
     
-    "id": 1,
+    "id": 2,
     "title": "Team Lead  ",
     "opening":"1",
     "experience": "2+",
@@ -75,7 +75,7 @@ job=[
   },
   {
     
-    "id": 1,
+    "id": 3,
     "title": "IT Developer",
     "opening":"5",
     "experience": "1+",
@@ -85,7 +85,7 @@ job=[
   },
   {
     
-    "id": 1,
+    "id": 4,
     "title": "Data Research",
     "opening":"10",
     "experience": "1+",
@@ -95,7 +95,7 @@ job=[
   },
   {
     
-    "id": 1,
+    "id": 5,
     "title": "Manager ",
     "opening":"1",
     "experience": "3+",
@@ -105,7 +105,7 @@ job=[
   },
   {
     
-    "id": 1,
+    "id": 6,
     "title": "Team Lead  ",
     "opening":"2",
     "experience": "2+",
@@ -114,7 +114,7 @@ job=[
     'apply':'https://www.google.com/'
   }, {
     
-    "id": 1,
+    "id": 7,
     "title": "Appoinment",
     "opening":"2",
     "experience": "2+",
@@ -124,7 +124,7 @@ job=[
   },
   {
     
-    "id": 1,
+    "id": 8,
     "title": "Management Information system ",
     "opening":"3",
     "experience": "1+",
@@ -134,7 +134,7 @@ job=[
   },
   {
     
-    "id": 1,
+    "id": 9,
     "title": "HR Executive ",
     "opening":"2",
     "experience": "1+",
@@ -144,7 +144,7 @@ job=[
   },
   {
     
-    "id": 1,
+    "id": 10,
     "title": "HR Manager ",
     "opening":"1",
     "experience": "2+",
