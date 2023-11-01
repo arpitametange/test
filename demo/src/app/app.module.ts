@@ -23,6 +23,8 @@ import{MatSnackBarModule} from '@angular/material/snack-bar';
 import { RequestDemoComponent } from './request-demo/request-demo.component';
 import { CarrierpageComponent } from './carrierpage/carrierpage.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { ApplypageComponent } from './applypage/applypage.component';
+import { MoreInfopageComponent } from './more-infopage/more-infopage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import {MatMenuModule} from '@angular/material/menu';
     LoginComponent,
     SignupComponent,
     RequestDemoComponent,
-    CarrierpageComponent
+    CarrierpageComponent,
+    ApplypageComponent,
+    MoreInfopageComponent
   ],
   imports: [
     BrowserModule,

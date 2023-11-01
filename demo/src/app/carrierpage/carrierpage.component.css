@@ -1,7 +1,7 @@
 .carrier{
 padding-top:100px;
 padding-left: 600px;
-padding-bottom:100px ;
+padding-bottom:10px ;
 background-color: white;
 }
 
@@ -42,4 +42,8 @@ background-color: white;
   
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+  .table{
+    width: 1000px;
   }
