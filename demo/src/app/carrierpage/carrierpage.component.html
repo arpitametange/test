@@ -1,0 +1,63 @@
+
+<div  >
+<div class="carrier">
+    <h1 style="font-size: 50px;">Open positions</h1>
+    <h2 style="padding-left: 40px;">Browse Our Open positions</h2>
+    <div class="dropdown"  style="padding-left: 54px;">
+        <button mat-button [matMenuTriggerFor]="menu"  >All location</button>
+        
+<mat-menu #menu="matMenu">
+  <button mat-menu-item  *ngFor="let country of countries" [value]="country.value">{{ country.name }}</button>
+  <button mat-menu-item>Remote philipines 2</button>
+</mat-menu>
+
+<button mat-button  [matMenuTriggerFor]="menu" [(ngModel)]="selectedCity">All departments</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let city of cities" [value]="city">{{ city }} </button>
+  <button mat-menu-item>Finanace</button>
+</mat-menu>
+    </div>
+
+
+>
+
+
+
+    
+    <div style="padding-right: 400px; padding-top: 50px; padding-left: 10px; margin-right: 100px;">
+       
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Positions</th>
+                    <th>Opening</th>
+                    <th>Experience</th>
+                    <th>location</th>
+                    <th>more info</th>
+                    <th> apply here</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of job" >
+                  <td  >{{t.title}}</td>
+                  <td>{{t.opening}}</td>
+                  <td >{{t.experience}} years</td>
+                  <td >{{t.location}}</td>
+                  <td>{{t.info}}</td>
+                  <td>  <a href="{{t.apply}}"></a>apply </td>
+                </tr>
+               
+            </tbody>
+        </table>
+     
+      </div>
+
+</div>
+
+
+
+
+
+
+  
+  

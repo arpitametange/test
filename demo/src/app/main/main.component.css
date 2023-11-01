@@ -1,0 +1,15 @@
+.maindiv{
+display: inline-flex;
+flex-direction: row;
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7I39r0WN3RpZhixQOCF-STeCKfhklPvmhJpGKuf_lV2_84-oVo3yWu3woawrDd1hqofQ&usqp=CAU');
+background-repeat: no-repeat;
+background-size: cover
+
+}
+.firstdiv{
+width: 46%;
+padding: 200px;
+}
+.secondiv{
+width: 40%;
+}
