@@ -1,62 +1,139 @@
-.header {
+.header{
   width: 100%;
   height: 100px;
   background-color: #7566fe;
   z-index: 99;
   position: sticky;
   top: 0;
+
+background-color: transparent;
+transition: background-color 0.3s ease; 
+
 }
-
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-
-/* heeader  */
-.user-id {
-  height: 76px;
-  width: 100%;
-  background: #cca687;
-  position: relative;
+.signup-button {
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+  font-family: 'Calibri', sans-serif;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: none;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+
+  
+  &:hover {
+    background-color: rgba(26, 25, 25, 0.836);
+    color: rgb(245, 245, 245);
+    border-radius: 10px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); 
+  }
 }
 
-.user-picture {
-  height: 100%;
-  float: left;
+
+
+.signup-button-log {
+  margin-right: 10px;
+  width: 100px;
+  height: 50px;
+  font-size: 16px;
+  font-family: 'Calibri', sans-serif;
+  font-weight: bold;
+  background-color: inherit;
+  color: black;
+  border: 2px solid black; 
+  cursor: pointer;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+  text-align: center; 
+  line-height: 40px; 
+
+
+  &:hover {
+    background-color: inherit;
+    color: rgb(2, 2, 2);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  }
 }
 
-.user-name {
-  height: 100%;
-  width: 200px;
+.demo-button {
+  font-family: 'Calibri', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  margin: 0 15px; 
+  background-color: inherit;
+  /* transition: background-color 0.3s, color 0.3s; */
+  border: none; 
+
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+
+
+
+
+
+.user-id:hover .dropdown-menu {
+  display: inline-flex;                  
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+.dropdown-menu ul li {
+  list-style-type: none;
+  display: block;
+  height: 100px; 
+  width: 100%;
   font-size: 1.5em;
   line-height: 2.5em;
-  padding-top: 20px;
-  float: left;
+  padding: 20px;
+  color: #f8f7f7;
+  border-bottom: 2px solid #333;
 }
 
-.button {
+
+
+.dropdown-menu ul li:hover {
+  background: #333;
+  color: #fff;
+}
+
+
+
+.sidepage{
+  color: white;
+}
+
+.button{
   position: absolute;
   bottom: 10px;
-  right: 100px;
+  right:100px;
   top: 35px;
+  
 }
 
-
-/* header */
 .header {
   width: 100%;
   height: 100px;
-  background-color: #582f06;
+  background-color:#582f06;
   z-index: 99;
   position: sticky;
   top: 0;
-  background-image: url(https://images.pexels.com/photos/18754091/pexels-photo-18754091/free-photo-of-sunset-in-the-world-famous-fethiye-oludeniz-at-the-beginning-of-the-year-tourists-come-to-watch-the-sunset.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load);
+  background: inherit;
 }
 
 .title {
@@ -66,8 +143,37 @@
   top: 25px;
   font-size: 42px;
   /* font-weight: bolder; */
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
+@media screen and (max-width: 576px) {
+  .signup-button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
 
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .signup-button {
+    width: 150px;
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
 
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .signup-button {
+    width: 180px;
+    font-size: 18px;
+    padding: 14px 28px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .signup-button {
+    width: 210px;
+    font-size: 20px;
+    padding: 16px 32px;
+  }
+}

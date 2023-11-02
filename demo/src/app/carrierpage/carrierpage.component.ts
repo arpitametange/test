@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ApplypageComponent } from '../applypage/applypage.component';
 import { MoreInfopageComponent } from '../more-infopage/more-infopage.component';
+import { ComponentPortal } from '@angular/cdk/portal';
 interface Location {
   id: number;
   name: string;
@@ -30,22 +31,9 @@ export class CarrierpageComponent implements  OnInit  {
     throw new Error('Method not implemented.');
   }
   constructor(public dialog: MatDialog) {}
+  selectedLocation: string=''
 
-
-  departments = [
-    { "departments":"QA Analyst"  },
-    {  "departments":"Data Analyst" },
-    {  "departments":"Data Research Analyst"  },
-    {  "departments":"Team Lead- QA"  },
-    {  "departments":"Team Lead- Operations"  },
-    {'departments':"IT Developer"},
-    {'departments':"MIS Executiv"},
-    {'departments':"Appointment Generation Executive"},
-    {'departments':"Manager - Operations"},
-    {'departments':"HR Executive"},
-    {'departments':"HR Manager"},
-
-  ];
+  searchTerm: string = ''; 
 
   location=[
     {"location":"pune,IND"}
@@ -115,7 +103,7 @@ job=[
   }, {
     
     "id": 7,
-    "title": "Appoinment",
+    "title": "Generation Executive",
     "opening":"2",
     "experience": "2+",
     "location":"Pune, IND",
@@ -167,20 +155,12 @@ job=[
 
 
   
-  openDialog2(){
-    const dialogRef = this.dialog.open(MoreInfopageComponent, {
-      data: {},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-     
-    });
-  }
-  }
 
 
 
+
+
+}
 
 
 

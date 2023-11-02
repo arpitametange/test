@@ -25,6 +25,9 @@ import { CarrierpageComponent } from './carrierpage/carrierpage.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { ApplypageComponent } from './applypage/applypage.component';
 import { MoreInfopageComponent } from './more-infopage/more-infopage.component';
+import { FilterPipe } from './filter.pipe';
+import { MatSelectModule } from '@angular/material/select';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,8 @@ import { MoreInfopageComponent } from './more-infopage/more-infopage.component';
     RequestDemoComponent,
     CarrierpageComponent,
     ApplypageComponent,
-    MoreInfopageComponent
+    MoreInfopageComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,9 @@ import { MoreInfopageComponent } from './more-infopage/more-infopage.component';
     HttpClientModule,
     MatDialogModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

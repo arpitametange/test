@@ -1,63 +1,48 @@
-
-<div  >
-<div class="carrier">
+<div>
+  <div class="carrier">
     <h1 style="font-size: 50px;">Open positions</h1>
-    <h2 style="padding-left: 40px;">Browse Our Open positions</h2>
-    <div class="dropdown"  style="padding-left: 54px;">
-        <button mat-button [matMenuTriggerFor]="menu"  >All Departments</button>
-        
-<mat-menu #menu="matMenu">
-  <button mat-menu-item  *ngFor="let country of departments" >{{ country.departments }}</button>
+    <h2 style="padding-left: 40px; padding-top: 10px;">Browse Our Open positions</h2>
+    <div class="dropdown" style="padding-left: 44px;" >
+      
 
-</mat-menu>
+      <mat-form-field appearance="fill">
+        <mat-label>All Departments</mat-label>
+        <mat-select [(ngModel)]="searchTerm" placeholder="Select a department">
+          <mat-option *ngFor="let country of job" [value]="country.title">{{ country.title }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
 
-<button mat-button  [matMenuTriggerFor]="menu1">All location</button>
-<mat-menu #menu1="matMenu" >
-  <button  mat-menu-item *ngFor="let city of location">{{ city.location}} </button>
-
-</mat-menu>
+      <mat-form-field style="padding:15px;">
+        <mat-select [(ngModel)]="selectedLocation" placeholder="All Locations">
+          <mat-option *ngFor="let city of location" [value]="city.location">{{ city.location }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
     </div>
-
-
-
-
-
-
-    
-   
-
-</div>
-<div style="padding-right: 60px; padding-top: 50px; padding-left: 300px; margin-right: 100px;">
-       
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Positions</th>
-                <th>Opening</th>
-                <th>Experience</th>
-                <th>Location</th>
-                <th>More details</th>
-                <th>Apply here</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let t of job" >
-              <td  >{{t.title}}</td>
-              <td>{{t.opening}}</td>
-              <td >{{t.experience}} years</td>
-              <td >{{t.location}}</td>
-              <td  (click)="openDialog2()">More Info</td>
-              <td (click)="openDialog()">  Apply </td>
-            </tr>
-           
-        </tbody>
-    </table>
- 
   </div>
-
-
-
-
-
-  
-  
+  <div style="padding-right: 100px; padding-top: 50px; padding-left: 300px; margin-right: 100px;">
+    <table class="table shadow">
+      <thead>
+        <tr>
+          <th>Positions</th>
+          <th>Opening</th>
+          <th>Experience</th>
+          <th>Location</th>
+          <th>More details</th>
+          <th>Apply here</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of job | filter: searchTerm">
+          <td>{{ t.title }}</td>
+          <td>{{ t.opening }}</td>
+          <td>{{ t.experience }} years</td>
+          <td>{{ t.location }}</td>
+          <td><a [routerLink]="['/jobdetails', t.id]">More Info </a></td>
+          <td (click)="openDialog()"> Apply </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

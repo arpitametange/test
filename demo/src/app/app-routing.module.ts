@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { RequestDemoComponent } from './request-demo/request-demo.component';
 import { CarrierpageComponent } from './carrierpage/carrierpage.component';
+import { MoreInfopageComponent } from './more-infopage/more-infopage.component';
 
 const routes: Routes = [{
   path:"" ,pathMatch:"full",redirectTo:'main'
@@ -18,7 +19,8 @@ const routes: Routes = [{
   {path:'demo',component:DemoComponent},
   {path:'footer',component:FooterComponent},
   {path:'main',component:MainComponent},
-  {path:'carrier',component:CarrierpageComponent}
+  {path:'carrier',component:CarrierpageComponent},
+  {path:'jobdetails/:id',component:MoreInfopageComponent}
 ];
 
 @NgModule({
