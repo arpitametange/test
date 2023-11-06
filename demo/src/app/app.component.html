@@ -1,12 +1,7 @@
 
- <app-demo></app-demo>
-<!-- <app-main></app-main>
+ <app-demo *ngIf="!showHeaderB()"></app-demo>
 
- - <div class="uk-animation-toggle" tabindex="0"> -->
-    <!-- <div class="uk-card uk-card-default uk-card-body uk-animation-scale-down">
-        <p class="uk-text-center"><img src="https://images.pexels.com/photos/5802935/pexels-photo-5802935.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></p>
-    </div>
-</div>  -->
 
 <router-outlet></router-outlet>
-<app-footer></app-footer>  
+<app-footer  *ngIf="!showHeaderB()"></app-footer>  
+

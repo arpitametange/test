@@ -1,0 +1,38 @@
+
+<mat-list>
+        <mat-form-field [style.width.px]=250  >
+        <mat-label>List </mat-label>
+        <mat-select
+        
+          multiple
+          data-te-select-clear-button="true"
+          
+        >
+          <mat-option
+            *ngFor="let topping of jobname"
+            [value]="topping" 
+            >{{ topping}}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-list-item> Name</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Job Title</mat-list-item>
+  </mat-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

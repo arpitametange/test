@@ -1,0 +1,99 @@
+<div></div>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <div class="search"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" routerLink="firstPage"></mat-icon>
+            <div><span class="material-symbols-outlined" routerLink="search">
+                search
+                </span></div>
+           
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="navbarr"> 
+            <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand">Navbar</a>
+            <form class="form-inline my-2 my-lg-0">
+                <div style="display: flex; flex-direction: row;"> <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></div>
+                 
+              </form>
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+            <!-- Icon -->
+            <a class="text-reset me-3" href="#">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+        
+            <!-- Notifications -->
+            <div class="dropdown show">
+                <a
+                class="text-reset me-3 dropdown-toggle hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+              <span class="material-symbols-outlined">
+                notifications
+                </span>
+              </a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+
+
+            <div class="dropdown">
+              
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+            <!-- Avatar -->
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuAvatar"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img class="image" style=" max-width: 10%;"
+                  src="data:image/png;base64,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"
+                  class="rounded-circle"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuAvatar"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">My profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Settings</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        
+            <hr style="color: black;">
+          </nav></div>
+       
+      
+      <router-outlet></router-outlet>
+    
+    </mat-sidenav-content>
+</mat-sidenav-container>

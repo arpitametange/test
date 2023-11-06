@@ -1,0 +1,58 @@
+<div
+  class="row mb-4"
+  style="margin-left: 500px; justify-content: center; height: 500px;"
+>
+  <div
+    class="col-6 shadow mt-3"
+    style="
+      padding-top: 70px;
+      padding-bottom: 10px;
+      padding-left: 100px;
+      background-color: rgb(235, 219, 219);
+      background-color: inherit;
+    "
+  >
+    <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold">
+      Sign up to create account
+    </h1>
+    <div class="input-group mb-3 mt-5" style="padding-left: 32px">
+      <form [formGroup]="mySignUpForm" (ngSubmit)="OnSubmit()" >
+        <mat-form-field class="example-full-width" style="width: 300px">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="" value="" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" style="width: 300px">
+          <mat-label>email</mat-label>
+          <input matInput placeholder="" value="" formControlName="email" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" style="width: 300px">
+        
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'"    formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            
+        </mat-form-field>
+        <!-- <div class="input-group-prepend ">
+                <input type="text" style="width: 500px;" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+            </div> -->
+        <div >
+          <button class="btn btn-outline-secondary" type="submit">
+            signup
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- <img src="https://cdn.dribbble.com/users/2234430/screenshots/9521962/media/642d6500f280f2e3715f68a3d3022613.gif" alt=""> -->
+  </div>
+
+  <div class="col-6 mt-3">
+    <!-- <video width="320" height="140" controls>
+            <source src="https://player.vimeo.com/external/368730818.sd.mp4?s=c3953421878536e1a7db904cae7dae03e7bfad19&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+           
+            Your browser does not support the video tag.
+          </video> -->
+    <!-- <img src="https://media.istockphoto.com/id/1393065914/photo/spherical-interconnected-polygons-with-a-large-padlock-inside-prominent-in-the-center-light.jpg?s=2048x2048&w=is&k=20&c=juODKBErPXZ9OU_rI0NM5VhpH6LrwkWtHBRYbHmShZc=" alt=""> -->
+  </div>
+</div>
