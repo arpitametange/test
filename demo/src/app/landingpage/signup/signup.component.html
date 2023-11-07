@@ -1,6 +1,6 @@
 <div
   class="row mb-4"
-  style="margin-left: 500px; justify-content: center; height: 500px;"
+  style="margin-left: 500px; justify-content: center; height: 700px;"
 >
   <div
     class="col-6 shadow mt-3"
@@ -17,15 +17,19 @@
     </h1>
     <div class="input-group mb-3 mt-5" style="padding-left: 32px">
       <form [formGroup]="mySignUpForm" (ngSubmit)="OnSubmit()" >
-        <mat-form-field class="example-full-width" style="width: 300px">
+        <mat-form-field class="example-full-width" >
           <mat-label>Name</mat-label>
           <input matInput placeholder="" value="" formControlName="name" />
         </mat-form-field>
-        <mat-form-field class="example-full-width" style="width: 300px">
+        <mat-form-field class="example-full-width" >
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="" value="" formControlName="Lname" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" >
           <mat-label>email</mat-label>
           <input matInput placeholder="" value="" formControlName="email" />
         </mat-form-field>
-        <mat-form-field class="example-full-width" style="width: 300px">
+        <mat-form-field class="example-full-width" >
         
                 <mat-label>Enter your password</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'"    formControlName="password">
