@@ -38,6 +38,11 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { FiltersComponent } from './mainpage/sidenavfolders/search/filters/filters.component';
 import { SavedSearchesComponent } from './mainpage/sidenavfolders/search/saved-searches/saved-searches.component';
+import { SavedComponent } from './mainpage/sidenavfolders/search/people/saved/saved.component';
+import { NetNewComponent } from './mainpage/sidenavfolders/search/people/net-new/net-new.component';
+import { TotalComponent } from './mainpage/sidenavfolders/search/people/total/total.component';
+
+import { RigthSidenetnewSavedTotalComponent } from './mainpage/sidenavfolders/search/people/rigth-sidenetnew-saved-total/rigth-sidenetnew-saved-total.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +63,11 @@ import { SavedSearchesComponent } from './mainpage/sidenavfolders/search/saved-s
     CompaniesComponent,
     SavedListComponent,
     FiltersComponent,
-    SavedSearchesComponent
+    SavedSearchesComponent,
+    SavedComponent,
+    NetNewComponent,
+    TotalComponent,
+    RigthSidenetnewSavedTotalComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +97,8 @@ import { SavedSearchesComponent } from './mainpage/sidenavfolders/search/saved-s
     MatFormFieldModule,
     MatSidenavModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

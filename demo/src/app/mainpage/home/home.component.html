@@ -2,12 +2,35 @@
 
 <mat-sidenav-container>
     <mat-sidenav mode="side" opened>
-        <div class="search"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" routerLink="firstPage"></mat-icon>
-            <div><span class="material-symbols-outlined" routerLink="search">
+        <div class="search">
+          <div style="padding-bottom: 10px;">   <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" routerLink="firstPage"></mat-icon>  </div>
+             <mat-divider></mat-divider>
+            <div style="padding-top: 25px; "><span class="material-symbols-outlined" routerLink="search">
                 search
                 </span></div>
            
         </div>
+
+       <div style="padding-bottom: 25px;"> <span class="material-symbols-outlined">
+        autostop
+        </span></div>
+
+          <mat-divider></mat-divider>
+          <div style="padding-top: 30px;"><span class="material-symbols-outlined">
+            send
+            </span>
+</div>
+<div><span class="material-symbols-outlined">
+  mail
+  </span></div>
+  <div style="padding-bottom: 15px;"><span class="material-symbols-outlined">
+    call
+    </span></div>
+  
+<mat-divider></mat-divider>
+    <div style="padding-top: 30px;"><span class="material-symbols-outlined">
+      event_available
+      </span></div>
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="navbarr"> 
@@ -17,6 +40,8 @@
                 <div style="display: flex; flex-direction: row;"> <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></div>
                  
               </form>
+
+              
         <!-- Right elements -->
         <div class="d-flex align-items-center">
             <!-- Icon -->
@@ -91,7 +116,7 @@
         
             <hr style="color: black;">
           </nav></div>
-       
+       <mat-divider class="shadow"></mat-divider>
       
       <router-outlet></router-outlet>
     
