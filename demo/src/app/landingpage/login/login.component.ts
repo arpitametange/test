@@ -32,42 +32,44 @@ export class LoginComponent implements OnInit {
   OnSubmit() {
     const emailControl = this.myReactiveForm.get('email');
     const passwordControl = this.myReactiveForm.get('password');
-  console.log(this.myReactiveForm.value,'contraol');
-  this.userService.login(this.myReactiveForm.value).subscribe(() => {
-    // Handle login response
-    // Save JWT token and handle user session
-  });
-  if (emailControl && passwordControl && emailControl.valid && passwordControl.valid) {
-    const email = emailControl.value;
-    const password = passwordControl.value;
-    this.userService.login(this.myReactiveForm.value).subscribe(
-      (response) => {
-        // Handle successful login response
-        // Save JWT token and handle user session
-        console.log('successfully handle the response',response); // You can log the response for debugging purposes
-        this.snackbar.open('You have login successfully','close', {
-          duration: 4 * 1000,
-        })
-        this.router.navigate(['home']);
-      },
-      (error) => {
-        // Handle error from login API
-        console.error('what is the errror',error); // Log the error for debugging purposes
-        // You can show an error message to the user or perform other error handling tasks.
-
-        this.snackbar.open('User does not exits', 'close', {
-          duration: 4 * 1000,
-        });
-      }
-    );
-  } else {
-    this.myReactiveForm.markAllAsTouched();
-    this.snackbar.open('please enter the correct email or password', 'close', {
-      duration: 4 * 1000,
-    });
+  
+    if (emailControl && passwordControl && emailControl.valid && passwordControl.valid) {
+      this.userService.login(this.myReactiveForm.value).subscribe(
+        (response) => {
+          // Handle successful login response
+          console.log('Successfully handled the response:', response); // Log the response for debugging purposes
+          this.snackbar.open('You have logged in successfully', 'Close', {
+            duration: 4000, // 4 seconds
+          });
+          this.router.navigate(['home']);
+        },
+        (error) => {
+          // Handle error from login API
+          console.error('Error occurred during login:', error); // Log the error for debugging purposes
+  
+          if (error.status === 401) {
+            this.snackbar.open('Invalid email or password. Please try again.', 'Close', {
+              duration: 4000, // 4 seconds
+            });
+          } else if (error.status === 404) {
+            this.snackbar.open('User not found. Please register or check your credentials.', 'Close', {
+              duration: 4000, // 4 seconds
+            });
+          } else {
+            this.snackbar.open('An error occurred. Please try again later.', 'Close', {
+              duration: 4000, // 4 seconds
+            });
+          }
+        }
+      );
+    } else {
+      this.myReactiveForm.markAllAsTouched();
+      this.snackbar.open('Please enter a valid email and password.', 'Close', {
+        duration: 4000, // 4 seconds
+      });
+    }
   }
-}
-
+  
   
   
 }

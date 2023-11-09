@@ -38,9 +38,9 @@ OnSubmit() {
       // Handle successful signup response
       console.log(response, 'data in ts signup');
       this.mySignUpForm.reset();
-      this.snackbar.open('Signup Successfully','close',({
-duration:2000
-      }))
+      this.snackbar.open('Signup Successful!', 'Close', {
+        duration: 2000,
+      });
       this.router.navigate(['home']);
     },
     (error) => {
@@ -50,15 +50,15 @@ duration:2000
           duration: 2000,
         });
       } else if (error.status === 500) {
-        this.snackbar.open('This email has already used. Please try again later.', 'Close', {
+        this.snackbar.open('This email has already been used. Please try a different email.', 'Close', {
           duration: 2000,
         });
       } else {
-        this.snackbar.open('An error occurred. Please try again.', 'Close', {
+        this.snackbar.open('An error occurred. Please try again later.', 'Close', {
           duration: 2000,
         });
       }
-      console.error(error); // Log the error for debugging purposes
+      console.error('Error during signup:', error); // Log the error for debugging purposes
     }
   );
 }

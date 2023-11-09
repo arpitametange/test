@@ -13,7 +13,7 @@ headers:this.headers
 
   // private baseUrl = 'http://192.168.0.5:8080/api/register';
 
-  private url="http://localhost:3000/test/addTodo"
+  private url="http://localhost:3000/login/addTodo"
   private loginurl="http://localhost:3000/login/login"
   constructor(private http: HttpClient) { }
 
