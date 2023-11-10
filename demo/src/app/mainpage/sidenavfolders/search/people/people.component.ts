@@ -1,39 +1,48 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetDataService } from './get-data.service';
-
+import { ChangeDetectionStrategy } from '@angular/core';
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
-  styleUrls: ['./people.component.css']
+  styleUrls: ['./people.component.css'],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class PeopleComponent {
-  jobname=[1,23,34,4,5,3]
-  dataList:any
-  allData:any
+  jobname = [1, 23, 34, 4, 5, 3];
+  dataList: any;
+  allData: any;
   currentPage: number = 0;
-  pageSize: number = 10;
+  pageSize: number = 100;
   jobTitles: string[] = [];
+  locationFilter: string = '';
+  countries$: any = [];
+  countryFilter: string = '';
+  nameFilter: any = '';
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: GetDataService) {
-    this.service.getdata().subscribe((res)=>{
-      console.log(res,'data in constructor');
-      this.allData=res
-      })
-   }
+  constructor(private route: ActivatedRoute, private router: Router, private service: GetDataService) {}
 
   ngOnInit(): void {
+    this.countries$ = this.service.getListOfCountries();
     this.loadData();
   }
 
-
-
-  // pagination code
   loadData() {
-    this.service.getAllData(this.currentPage, this.pageSize, this.jobTitles).subscribe((res: any) => {
-      console.log(res, "Get all data");
-      this.dataList = res; 
-    });
+    this.service
+      .getAllData(
+        this.currentPage,
+        this.pageSize,
+        this.nameFilter
+      )
+      .subscribe(
+        (res: any) => {
+          console.log('Response:', res);
+          this.dataList = res;
+        },
+        (error) => {
+          console.error('Error:', error);
+        }
+      );
   }
 
   isPeopleRoute(): boolean {
@@ -55,24 +64,12 @@ export class PeopleComponent {
 
   onJobTitleChange(selectedJobTitles: string[]) {
     this.jobTitles = selectedJobTitles;
-    this.currentPage = 0; // Reset to first page when filter changes
+    this.currentPage = 0;
     this.loadData();
   }
 
-
-
-
-// filter components ts
-// jobname=[1,23,34,4,5,3]
-//   allData:any
-//   constructor(private service: GetDataService){
-// this.service.getdata().subscribe((res)=>{
-// console.log(res,'data in constructor');
-// this.allData=res
-// })
-//   }
-
-
-
-  
+  applyFilters() {
+    this.currentPage = 0;
+    this.loadData();
+  }
 }

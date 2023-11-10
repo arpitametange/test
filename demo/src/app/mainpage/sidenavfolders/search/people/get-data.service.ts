@@ -1,23 +1,32 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetDataService {
-  private apiUrl = 'http://localhost:8080'; 
+  private apiUrl = 'http://localhost:8080';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllData(page: number, size: number, jobTitles: string[]) {
-    const params = new HttpParams()
+  getAllData(
+    page: number,
+    size: number,
+    nameFilter?: string
+  ): Observable<any> {
+    let params = new HttpParams()
       .set('page', page.toString())
-      .set('size', size.toString())
-      .set('jobTitles', jobTitles.join(',')); // Convert array to comma-separated string
+      .set('size', size.toString());
+
+    if (nameFilter) {
+      params = params.set('Country', nameFilter);
+    }
 
     return this.http.get(`${this.apiUrl}/api/all`, { params });
   }
-  getdata(){
-    return this.http.get(`${this.apiUrl}/api/all`)
+
+  getListOfCountries(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/all?Country`);
   }
 }

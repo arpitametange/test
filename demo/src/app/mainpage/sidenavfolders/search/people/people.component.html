@@ -34,7 +34,7 @@
 
     <!-- left side content of filter -->
 
-
+<!-- 
     <mat-list>
       <mat-form-field [style.width.px]=250  >
         <mat-label>Name</mat-label>
@@ -60,9 +60,7 @@
     <mat-select
     
       multiple
-      data-te-select-clear-button="true"
-      
-    >
+      data-te-select-clear-button="true">
       <mat-option
         *ngFor="let topping of allData"
         [value]="topping" 
@@ -86,7 +84,7 @@
     </mat-select>
     </mat-form-field>
     <!-- <mat-divider></mat-divider> -->
-    <mat-form-field [style.width.px]=250  >
+    <!-- <mat-form-field [style.width.px]=250  >
     <mat-label>Employees </mat-label>
     <mat-select
     
@@ -116,7 +114,7 @@
       >
     </mat-select>
     </mat-form-field>
-    </mat-list>
+    </mat-list> -->
     
     
     
@@ -135,8 +133,12 @@
     
     
     
-    
-    
+   <!-- people.component.html -->
+   <mat-form-field [style.width.px]="250">
+    <mat-label>country</mat-label>
+    <input matInput placeholder="Ex. name" [(ngModel)]="nameFilter" (input)="applyFilters()">
+  </mat-form-field>
+
 
 
 
@@ -166,15 +168,11 @@
         <span>{{ currentPage + 1 }}</span>
         <button (click)="nextPage()">Next</button>
       </div>
-      <table
-        class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl} table-fixed"
-      >
+      <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl} table-fixed">
         <thead>
           <tr>
             <th>Name</th>
-
             <th>Company</th>
-
             <th>Title</th>
             <th>job_function</th>
             <th>Location</th>
@@ -186,18 +184,14 @@
           <tr *ngFor="let item of dataList">
             <td>{{ item.first_Name }} {{ item.last_Name }}</td>
             <td>{{ item.company_Name }}</td>
-
             <td>{{ item.job_Title }}</td>
             <td>{{ item.job_Function }}</td>
-
             <td>{{ item.city }} {{ item.country }}</td>
-
             <td>{{ item.employee_Size }}</td>
             <td>{{ item.industry }}</td>
           </tr>
         </tbody>
       </table>
-     
     </div>
    
   </div>
