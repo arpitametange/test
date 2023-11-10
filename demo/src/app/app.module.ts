@@ -43,6 +43,7 @@ import { NetNewComponent } from './mainpage/sidenavfolders/search/people/net-new
 import { TotalComponent } from './mainpage/sidenavfolders/search/people/total/total.component';
 
 import { RigthSidenetnewSavedTotalComponent } from './mainpage/sidenavfolders/search/people/rigth-sidenetnew-saved-total/rigth-sidenetnew-saved-total.component';
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -14,4 +14,8 @@ export class RigthSidenetnewSavedTotalComponent {
     return segments.includes('right');
   }
   
+
+
+
+  
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { GetDataService } from '../get-data.service';
 
 @Component({
   selector: 'app-total',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./total.component.css']
 })
 export class TotalComponent {
+
+  
 
 }
