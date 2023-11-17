@@ -120,7 +120,6 @@ job=[
     'apply':'https://www.google.com/'
   },]
 
-
   openDialog(){
     const dialogRef = this.dialog.open(ApplypageComponent, {
       data: {},
@@ -131,12 +130,6 @@ job=[
      
     });
   }
-
-
-  
-
-
-
 
 
 }

@@ -40,11 +40,11 @@ export class ApplypageComponent {
 
 
   departments = [
-    { "departments":"QA Analyst"  },
-    {  "departments":"Data Analyst" },
-    {  "departments":"Data Research Analyst"  },
-    {  "departments":"Team Lead- QA"  },
-    {  "departments":"Team Lead- Operations"  },
+    {"departments":"QA Analyst"  },
+    {"departments":"Data Analyst" },
+    {"departments":"Data Research Analyst"  },
+    {"departments":"Team Lead- QA"  },
+    {"departments":"Team Lead- Operations"  },
     {'departments':"IT Developer"},
     {'departments':"MIS Executiv"},
     {'departments':"Appointment Generation Executive"},
