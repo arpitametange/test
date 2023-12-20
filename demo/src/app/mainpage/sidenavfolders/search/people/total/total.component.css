@@ -19,7 +19,7 @@
 }
 
 th, tr, td, tbody, thead, table {
-    border: 1px solid black;
+    /* border: 1px solid rgb(87, 83, 83); */
     border-collapse: collapse;
     text-align: center;
 }
@@ -36,3 +36,81 @@ background-color:  rgb(193, 193, 197);
     background-color: rgb(228, 233, 235) ;
 }
 
+.custom-width {
+    width: 100%; 
+    max-width: 1200px; 
+  }
+  
+ /* Define custom styles for the scrollbar */
+.table-scroll-container {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-width: 10000px;
+    padding-left: 70px;
+    padding-right: 950px;
+  }
+  
+  /* Style the vertical scrollbar */
+  .table-scroll-container::-webkit-scrollbar {
+    width: 10px; /* Adjust the width as needed */
+  }
+  
+  .table-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+  
+  .table-scroll-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+ 
+  .table-scroll-container::-webkit-scrollbar-horizontal {
+    height: 10px; /* Decrease the height to make it narrower */
+  }
+  
+  .table-scroll-container::-webkit-scrollbar-thumb:horizontal {
+    background-color: #888; /* Change the color as needed */
+    border-radius: 5px;
+  }
+  
+  .table-scroll-container::-webkit-scrollbar-track:horizontal {
+    background-color: #f1f1f1;
+  }
+  
+
+  .table {
+    width: 100%; /* Set to 100% to cover the container */
+  }
+  
+
+  .table-scroll-container {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-width: 10000px;
+    padding-left: 10px;
+    padding-right: 800px;
+  }
+  /* Style the first column to be sticky */
+  .table-fixed th:first-child,
+  .table-fixed td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: white; /* Adjust the background color as needed */
+    box-shadow: 5px 0 5px -5px #888; /* Add shadow to the right */
+  }
+  
+  
+  /* Ensure the first column sticks to the left when scrolling horizontally */
+  .table-fixed thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: rgb(238, 234, 234); /* Adjust the background color as needed */
+    box-shadow: 5px 0 5px -5px #f0ecec; /* Add shadow to the right */
+  }
+  
+  

@@ -98,9 +98,10 @@
         <button class="btn btn-close-white mx-2" *ngIf="currentPage > 1" (click)="goToPage(currentPage - 1)">Previous</button>
         <button class="btn btn-close-white " *ngIf="currentPage < results.total_pages" (click)="goToPage(currentPage + 1)">Next</button>
       </div>
-      <div style="max-height: 500px; overflow-y: auto; max-width: 1500px;">
+      <div style="max-height: 500px; ; max-width: 10000px;padding-left: 10px; padding-right: 900px;">
+        <div class="table-scroll-container">
         <div *ngIf="results.data.length > 0; else blankTable">
-          <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl} table-fixed">
+          <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl} table-fixed  custom-width">
             <thead>
               <tr>
                 <th>Name</th>
@@ -125,6 +126,7 @@
             </tbody>
           </table>
         </div>
+      </div>
       </div>
     </div>
   
