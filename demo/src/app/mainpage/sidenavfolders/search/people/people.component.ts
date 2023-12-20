@@ -2,6 +2,12 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetDataService } from './get-data.service';
 import { ChangeDetectionStrategy } from '@angular/core';
+import * as XLSX from 'xlsx';
+
+import saveAs from 'file-saver';
+import * as FileSaver from 'file-saver';
+import { FilterService } from '../filters/filter.service';
+
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
@@ -9,67 +15,31 @@ import { ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class PeopleComponent {
-  jobname = [1, 23, 34, 4, 5, 3];
-  dataList: any;
-  allData: any;
-  currentPage: number = 0;
-  pageSize: number = 100;
-  jobTitles: string[] = [];
-  locationFilter: string = '';
-  countries$: any = [];
-  countryFilter: string = '';
-  nameFilter: any = '';
+  filters: any = {};
+  results: any = [];
+  currentPage: number = 1;
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: GetDataService) {}
+  constructor(private apiService: GetDataService, private filterService: FilterService) {}
 
   ngOnInit(): void {
-    this.countries$ = this.service.getListOfCountries();
-    this.loadData();
+    this.filterService.filters$.subscribe((filters) => {
+      this.filters = filters;
+      this.search();
+    });
+
+    this.search();
   }
 
-  loadData() {
-    this.service
-      .getAllData(
-        this.currentPage,
-        this.pageSize,
-        this.nameFilter
-      )
-      .subscribe(
-        (res: any) => {
-          console.log('Response:', res);
-          this.dataList = res;
-        },
-        (error) => {
-          console.error('Error:', error);
-        }
-      );
+  search(): void {
+    this.apiService.searchRecords(this.filters, this.currentPage).subscribe((data) => {
+      this.results = data;
+    });
   }
 
-  isPeopleRoute(): boolean {
-    const segments: string[] = this.router.url.split('/');
-    return segments.includes('left');
-  }
-
-  nextPage() {
-    this.currentPage++;
-    this.loadData();
-  }
-
-  previousPage() {
-    if (this.currentPage > 0) {
-      this.currentPage--;
-      this.loadData();
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.results.total_pages) {
+      this.currentPage = page;
+      this.search();
     }
-  }
-
-  onJobTitleChange(selectedJobTitles: string[]) {
-    this.jobTitles = selectedJobTitles;
-    this.currentPage = 0;
-    this.loadData();
-  }
-
-  applyFilters() {
-    this.currentPage = 0;
-    this.loadData();
   }
 }

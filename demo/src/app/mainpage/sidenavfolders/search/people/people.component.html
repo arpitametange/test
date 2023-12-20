@@ -1,12 +1,13 @@
 <div class="row">
   <div class="sidebar col-2 shadow">
-    <!-- <ul class="nav mb-3" id="ex1" role="tablist">
+ <ul class="nav mb-3" id="ex1" role="tablist">
       <li class="nav-item" role="presentation">
         <a
           class="nav-link active"
           id="ex1-tab-1"
           data-mdb-toggle="tab"
           routerLink="left/filter"
+         
           role="tab"
           aria-controls="ex1-tabs-1"
           aria-selected="true"
@@ -25,174 +26,119 @@
           >Saved seraches</a
         >
       </li>
-    </ul> -->
-    <!-- Tabs navs -->
-
-
-
-
-
+    </ul>
+  
     <!-- left side content of filter -->
+    <!-- important code  -->
 
-<!-- 
-    <mat-list>
-      <mat-form-field [style.width.px]=250  >
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Ex. name">
-    </mat-form-field>
-    
-    <mat-form-field [style.width.px]=250  >
-    <mat-label>Job Titles </mat-label>
-    <mat-select
-    
-      multiple
-      data-te-select-clear-button="true"
-      
-    >
-      <mat-option
-        ></mat-option
-      >
-    </mat-select>
-    </mat-form-field>
-    
-    <mat-form-field [style.width.px]=250  >
-    <mat-label>Company </mat-label>
-    <mat-select
-    
-      multiple
-      data-te-select-clear-button="true">
-      <mat-option
-        *ngFor="let topping of allData"
-        [value]="topping" 
-        >{{ topping.company_Name}}</mat-option
-      >
-    </mat-select>
-    </mat-form-field>    <mat-divider></mat-divider>
-    <mat-form-field [style.width.px]=250  >
-    <mat-label>Location </mat-label>
-    <mat-select
-    
-      multiple
-      data-te-select-clear-button="true"
-      
-    >
-      <mat-option
-        *ngFor="let topping of allData"
-        [value]="topping" 
-        >{{ topping.city }} {{ topping.country }}</mat-option
-      >
-    </mat-select>
-    </mat-form-field>
-    <!-- <mat-divider></mat-divider> -->
-    <!-- <mat-form-field [style.width.px]=250  >
-    <mat-label>Employees </mat-label>
-    <mat-select
-    
-      multiple
-      data-te-select-clear-button="true"
-      
-    >
-      <mat-option
-        *ngFor="let topping of allData"
-        [value]="topping" 
-        >{{ topping.employee_Size }}</mat-option
-      >
-    </mat-select>
-    </mat-form-field>
-    <mat-form-field [style.width.px]=250  >
-    <mat-label>Industry </mat-label>
-    <mat-select
-    
-      multiple
-      data-te-select-clear-button="true"
-      
-    >
-      <mat-option
-        *ngFor="let topping of allData"
-        [value]="topping" 
-        >{{ topping.industry }}</mat-option
-      >
-    </mat-select>
-    </mat-form-field>
-    </mat-list> -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   <!-- people.component.html -->
-   <mat-form-field [style.width.px]="250">
-    <mat-label>country</mat-label>
-    <input matInput placeholder="Ex. name" [(ngModel)]="nameFilter" (input)="applyFilters()">
-  </mat-form-field>
+  <!-- <div class="col-lg-6 col-md-12 col-sm-12">
+     
+  <h2>Include Search</h2>
+  <label for="include_First_Name">First Name:</label>
+  <input type="text" [(ngModel)]="filters.include_First_Name" name="include_First_Name">
 
+  <label for="include_last_name">Last Name:</label>
+  <input type="text" [(ngModel)]="filters.include_last_name" name="include_last_name">
 
+  <label for="include_company_name">company_name:</label>
+  <input type="text" [(ngModel)]="filters.include_company_name" name="include_company_name">
 
+  <label for="include_company_domain">company_domain:</label>
+  <input type="text" [(ngModel)]="filters.include_company_domain" name="include_company_domain">
 
+  <label for="include_job_title">job_title:</label>
+  <input type="text" [(ngModel)]="filters.include_job_title" name="include_job_title">
 
+  <label for="include_job_function">job_function:</label>
+  <input type="text" [(ngModel)]="filters.include_job_function" name="include_job_function">
 
+  <label for="include_job_level">job_level:</label>
+  <input type="text" [(ngModel)]="filters.include_job_level" name="include_job_level">
 
-    <!-- Tabs content -->
-    <div class="tab-content" id="ex1-content">
+  <h2>Exclude Search</h2>
+
+  <label for="exclude_company_name">company_name:</label>
+  <input type="text" [(ngModel)]="filters.exclude_company_name" name="exclude_company_name">
+
+  <label for="exclude_company_domain">company_domain:</label>
+  <input type="text" [(ngModel)]="filters.exclude_company_domain" name="exclude_company_domain">
+
+  <label for="exclude_job_title">job_title:</label>
+  <input type="text" [(ngModel)]="filters.exclude_job_title" name="exclude_job_title">
+
+  <label for="exclude_job_function">job_function:</label>
+  <input type="text" [(ngModel)]="filters.exclude_job_function" name="exclude_job_function">
+
+  <label for="exclude_job_level">job_level:</label>
+  <input type="text" [(ngModel)]="filters.exclude_job_level" name="exclude_job_level">
+
+  <button (click)="search()">Search</button>
+  </div> -->
+
+  <div class="tab-content" id="ex1-content">
       <div
         class="tab-pane fade show active"
         id="ex1-tabs-1"
         role="tabpanel"
         aria-labelledby="ex1-tab-1"
       >
-        <ng-container *ngIf="isPeopleRoute()">
-          <router-outlet></router-outlet>
-        </ng-container>
+      <app-filters></app-filters> 
       </div>
+      
     </div>
   </div>
-  <div class="maincontent col-6 shadow">
+  <div class="maincontent col-6 col-lg-6 col-md-12 col-sm-12 shadow shadow">
+  
     <app-rigth-sidenetnew-saved-total></app-rigth-sidenetnew-saved-total>
-    <div class="container">
-      <h1>Data List</h1>
-      <div>
-        <button (click)="previousPage()">Previous</button>
-        <span>{{ currentPage + 1 }}</span>
-        <button (click)="nextPage()">Next</button>
-      </div>
-      <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl} table-fixed">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Company</th>
-            <th>Title</th>
-            <th>job_function</th>
-            <th>Location</th>
-            <th>Employee_Size</th>
-            <th>Industry</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of dataList">
-            <td>{{ item.first_Name }} {{ item.last_Name }}</td>
-            <td>{{ item.company_Name }}</td>
-            <td>{{ item.job_Title }}</td>
-            <td>{{ item.job_Function }}</td>
-            <td>{{ item.city }} {{ item.country }}</td>
-            <td>{{ item.employee_Size }}</td>
-            <td>{{ item.industry }}</td>
-          </tr>
-        </tbody>
-      </table>
+ 
+    <!-- <div class="container">
+      <h1>Data List</h1> 
+      <div style="margin-bottom: 10px;">
+       
+    <div style="margin-bottom: 10px;">
+      <p>Page {{ currentPage }} of {{ results.total_pages }}</p>
+      <button *ngIf="currentPage > 1" (click)="goToPage(currentPage - 1)">Previous</button>
+      <button *ngIf="currentPage < results.total_pages" (click)="goToPage(currentPage + 1)">Next</button>
     </div>
-   
+    
+      </div> 
+      <div *ngIf="results.data.length > 0; else blankTable">
+        
+          <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl} table-fixed">
+            <thead>
+              <tr>
+             
+                <th>Name</th>
+                <th>Company</th>
+                <th>Title</th>
+                <th>Job Function</th>
+                <th>Location</th>
+                <th>Employee Size</th>
+                <th>Industry</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of results.data">
+          
+                <td>{{ item.First_Name }} {{ item.last_name }}</td>
+                <td>{{ item.company_name }}</td>
+                <td>{{ item.job_title }}</td>
+                <td>{{ item.job_function }}</td>
+                <td>{{ item.city }} {{ item.country }}</td>
+                <td>{{ item.Employee_Size }}</td>
+                <td>{{ item.Industry }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div> 
+    
+    <ng-template #blankTable> 
+       <p>No data available.</p>
+    </ng-template>
+     -->
+     
   </div>
-</div>
+</div>    
+
+

@@ -1,32 +1,18 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GetDataService {
-  private apiUrl = 'http://localhost:8080';
+export class GetDataService   {
+  private apiUrl = 'http://192.168.0.5/PHP-API/api.php';
 
   constructor(private http: HttpClient) {}
 
-  getAllData(
-    page: number,
-    size: number,
-    nameFilter?: string
-  ): Observable<any> {
-    let params = new HttpParams()
-      .set('page', page.toString())
-      .set('size', size.toString());
-
-    if (nameFilter) {
-      params = params.set('Country', nameFilter);
-    }
-
-    return this.http.get(`${this.apiUrl}/api/all`, { params });
-  }
-
-  getListOfCountries(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/all?Country`);
+  searchRecords(filters: any, page: number = 1): Observable<any> {
+    const params = new HttpParams({ fromObject: { ...filters, page: page.toString() } });
+    return this.http.get<any>(this.apiUrl, { params });
   }
 }

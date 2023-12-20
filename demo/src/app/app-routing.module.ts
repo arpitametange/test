@@ -63,15 +63,15 @@ const routes: Routes = [
               { path: 'right/saved', component: SavedComponent },
               { path: 'right/total', component: TotalComponent },
               { path: 'right/netNew', component: NetNewComponent },
-              // {
-              //   path: 'right',
-              //   component: RigthSidenetnewSavedTotalComponent,
-              //   children: [
-              //     { path: 'right/saved', component: SavedComponent },
-              //     { path: 'total', component: TotalComponent },
-              //     { path: 'netNew', component: NetNewComponent },
-              //   ],
-              // },
+              {
+                path: 'right',
+                component: RigthSidenetnewSavedTotalComponent,
+                children: [
+                  { path: 'right/saved', component: SavedComponent },
+                  { path: 'total', component: TotalComponent },
+                  { path: 'netNew', component: NetNewComponent },
+                ],
+              },
             ],
           },
         ],

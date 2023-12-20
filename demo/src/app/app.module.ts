@@ -43,6 +43,12 @@ import { NetNewComponent } from './mainpage/sidenavfolders/search/people/net-new
 import { TotalComponent } from './mainpage/sidenavfolders/search/people/total/total.component';
 
 import { RigthSidenetnewSavedTotalComponent } from './mainpage/sidenavfolders/search/people/rigth-sidenetnew-saved-total/rigth-sidenetnew-saved-total.component';
+import { DataFilterService } from 'src/data-filter.service';
+import { SearchPeopleComponent } from './search-people/search-people.component';
+import {MatCardModule} from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -68,7 +74,8 @@ import { RigthSidenetnewSavedTotalComponent } from './mainpage/sidenavfolders/se
     SavedComponent,
     NetNewComponent,
     TotalComponent,
-    RigthSidenetnewSavedTotalComponent
+    RigthSidenetnewSavedTotalComponent,
+    SearchPeopleComponent
   ],
   imports: [
     BrowserModule,
@@ -99,9 +106,15 @@ import { RigthSidenetnewSavedTotalComponent } from './mainpage/sidenavfolders/se
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatInputModule,
+    MatBadgeModule,
+    MatButtonModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [DataFilterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

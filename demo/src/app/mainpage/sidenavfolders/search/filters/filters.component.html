@@ -49,8 +49,8 @@
   >
 </mat-select>
 </mat-form-field>
- <mat-divider></mat-divider> -->
-<!-- <mat-form-field [style.width.px]=250  >
+ <mat-divider></mat-divider>
+<mat-form-field [style.width.px]=250  >
 <mat-label>Employees </mat-label>
 <mat-select
 
@@ -80,22 +80,117 @@
   >
 </mat-select>
 </mat-form-field>
-</mat-list> -->
+</mat-list> 
+ -->
+
+
+<mat-card>
+  <mat-card-title style="margin: 20px;">Search</mat-card-title>
+  <mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="Ex. name" [(ngModel)]="filters.include_First_Name" name="include_First_Name" (ngModelChange)="applyFilter()">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="Ex. last name" [(ngModel)]="filters.include_last_name" name="include_last_name" (ngModelChange)="applyFilter()">
+  </mat-form-field>
+  <div class="shadow my-4 ">
+    <mat-label style="font-weight: bolder; margin: 20px;">Company Name</mat-label>
+  <mat-form-field>
+    <input matInput placeholder="Ex.Company Name" [(ngModel)]="filters.include_company_name" name="include_company_name" (ngModelChange)="applyFilter()">
+  </mat-form-field>
+ <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Exclude-Company Name</mat-panel-title>
+    </mat-expansion-panel-header >
+    <div style="display: flex; align-items: center;">
+    <mat-form-field style="flex: 1;">
+      <input matInput placeholder="Ex. exclude company name" [(ngModel)]="filters.exclude_company_name" name="exclude_company_name" (ngModelChange)="applyFilter()">
+    </mat-form-field>
+    </div>
+  </mat-expansion-panel>
+  </div>
+
+
+  <div class="shadow my-4 ">
+    <mat-label style="font-weight: bolder; margin: 20px;">Company Domain</mat-label>
+  <mat-form-field>
+    <input matInput placeholder="Ex. Company Domain" [(ngModel)]="filters.include_company_domain" name="include_company_domain" (ngModelChange)="applyFilter()">
+  </mat-form-field>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Exclude-Company Domain</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div style="display: flex; align-items: center;">
+    <mat-form-field style="flex: 1;">
+      <input matInput placeholder="Ex.Exclude company domain" [(ngModel)]="filters.exclude_company_domain" name="exclude_company_domain" (ngModelChange)="applyFilter()">
+    </mat-form-field>
+    </div>
+  </mat-expansion-panel>
+  </div>
+
+  <div class="shadow my-4 ">
+    <mat-label style="font-weight: bolder; margin: 20px;">Job Title</mat-label>
+  <mat-form-field>
+    <input matInput placeholder="Ex.Job Title" [(ngModel)]="filters.include_job_title" name="include_job_title" (ngModelChange)="applyFilter()">
+  </mat-form-field>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Exclude-Job Title</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div style="display: flex; align-items: center;">
+
+      <mat-form-field style="flex: 1;">
+        <input matInput placeholder="Ex. exclude company domain"[(ngModel)]="filters.exclude_job_title" name="exclude_job_title" (ngModelChange)="applyFilter()">
+      </mat-form-field>
+      </div>
+    </mat-expansion-panel>
+  </div>
+
+<div class="shadow my-4 ">
+  
+  <mat-label style="font-weight: bolder; margin: 20px;">Job Function</mat-label>
+    <mat-form-field>
+    
+    <input matInput placeholder="Ex.Job Function" [(ngModel)]="filters.include_job_function" name="include_job_function" (ngModelChange)="applyFilter()">
+  </mat-form-field>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Exclude-Job Function</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div style="display: flex; align-items: center;">
+      <mat-form-field style="flex: 1;">
+        <input matInput placeholder="Exclude job function" [(ngModel)]="filters.exclude_job_function" name="exclude_job_function" (ngModelChange)="applyFilter()">
+      </mat-form-field>
+    </div>
+  </mat-expansion-panel>
+  
+
+</div>
+
+
+  <mat-form-field>
+    <mat-label>Job Level</mat-label>
+    <input matInput placeholder="Ex. company name"  [(ngModel)]="filters.include_job_level" name="include_job_level" (ngModelChange)="applyFilter()">
+  </mat-form-field>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Exclude-Job Level</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div style="display: flex; align-items: center;">
+    <mat-form-field style="flex: 1;">
+      <input matInput placeholder="Ex. exclude company domain" [(ngModel)]="filters.exclude_job_level" name="exclude_job_level" (ngModelChange)="applyFilter()">
+    </mat-form-field>
+  </div>
+  </mat-expansion-panel>
+</mat-card>
+<mat-card>
+  <button mat-raised-button color="primary" (click)="applyFilter()">Search</button>
+</mat-card>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
- 
