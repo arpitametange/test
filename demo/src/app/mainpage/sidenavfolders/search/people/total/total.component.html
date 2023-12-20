@@ -1,2 +1,137 @@
+  <!-- *******************************************************************************************
+      <div class="col-lg-6 col-md-12 col-sm-12">
+         <mat-form-field class="w-100">
+           <mat-label>country</mat-label>
+           <input matInput placeholder="Ex. Location" [(ngModel)]="countryFilter" (ngModelChange)="applyFilter()">
+         </mat-form-field>
+       </div>
+        Tabs content 
+     <div class="tab-content" id="ex1-content">
+         <div
+           class="tab-pane fade show active"
+           id="ex1-tabs-1"
+           role="tabpanel"
+           aria-labelledby="ex1-tab-1"
+         >
+           <ng-container *ngIf="isPeopleRoute()">
+             <router-outlet></router-outlet>
+           </ng-container>
+         </div>
+       </div> -->
+     
+<!-- 
+<div class="col-lg-6 col-md-12 col-sm-12">
+    <mat-form-field class="w-100">
+      <mat-label>country</mat-label>
+      <input matInput placeholder="Ex. Location" [(ngModel)]="countryFilter" (ngModelChange)="applyFilter()">
+    </mat-form-field>
+  </div> -->
+  <!-- Tabs content -->
+  <!-- <div class="tab-content" id="ex1-content">
+    <div
+      class="tab-pane fade show active"
+      id="ex1-tabs-1"
+      role="tabpanel"
+      aria-labelledby="ex1-tab-1"
+    >
+      <ng-container >
+        <router-outlet></router-outlet>
+      </ng-container>
+    </div> -->
+  <!-- </div>  -->
 
-<p>total component</p>
+<!-- <div class="maincontent col-6 col-lg-6 col-md-12 col-sm-12 shadow shadow">
+  <app-rigth-sidenetnew-saved-total></app-rigth-sidenetnew-saved-total>
+  <div class="container">
+    <h1>Data List</h1>
+    <div style="margin-bottom: 10px;">
+      <input type="checkbox" class="mx-3" [(ngModel)]="selectAllChecked" (change)="selectAll()" /> Select All
+      <button class="btn btn-outline-dark mx-2" (click)="previousPage()">Previous</button>
+      <span>{{ currentPage + 1 }}</span>
+      <button class="btn btn-outline-dark mx-2 " (click)="nextPage()">Next</button>
+      <button class="btn btn-outline-dark mx-2 " (click)="exportToCSV()">Export to CSV</button>
+<button class="btn btn-outline-dark" (click)="exportToExcel()">Export to Excel</button>
+    </div>
+       <div *ngIf="dataList.length > 0; else blankTable">
+    <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl} table-fixed">
+      <thead>
+        <tr> 
+          <th>Select</th>
+          <th>Name</th>
+          <th>Company</th>
+          <th>Title</th>
+          <th>job_function</th>
+          <th>Location</th>
+          <th>Employee_Size</th>
+          <th>Industry</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataList" [class.selected-row]="item.selected">
+          <td>
+            <input type="checkbox" [checked]="item.selected" (change)="toggleSelection(item)" />
+          </td>
+          <td>{{ item.first_Name }} {{ item.last_Name }}</td>
+          <td>{{ item.company_Name }}</td>
+          <td>{{ item.job_Title }}</td>
+          <td>{{ item.job_Function }}</td>
+          <td>{{ item.city }} {{ item.country }}</td>
+          <td>{{ item.employee_Size }}</td>
+          <td>{{ item.industry }}</td>
+        </tr>
+      </tbody>
+    </table>
+      </div>
+  </div> 
+  <ng-template #blankTable>  
+    Display a message or other content for the blank table -->
+ <!-- <p>No data available.</p>
+  </ng-template>    -->
+
+
+
+  <div class="maincontent col-6 col-lg-6 col-md-12 col-sm-12">
+    <div class="container">
+      <h1>Data List</h1>
+      <div style="margin-bottom: 10px;">
+        <p>Page {{ currentPage }} of {{ results.total_pages }}</p>
+        <button class="btn btn-close-white mx-2" *ngIf="currentPage > 1" (click)="goToPage(currentPage - 1)">Previous</button>
+        <button class="btn btn-close-white " *ngIf="currentPage < results.total_pages" (click)="goToPage(currentPage + 1)">Next</button>
+      </div>
+      <div style="max-height: 500px; ; max-width: 10000px;padding-left: 10px; padding-right: 900px;">
+        <div class="table-scroll-container">
+        <div *ngIf="results.data.length > 0; else blankTable">
+          <table class="table table-bordered table-hover table-responsive{-sm|-md|-lg|-xl} table-fixed  custom-width">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Title</th>
+                <th>Job Function</th>
+                <th>Location</th>
+                <th>Employee Size</th>
+                <th>Industry</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of results.data">
+                <td>{{ item.First_Name }} {{ item.last_name }}</td>
+                <td>{{ item.company_name }}</td>
+                <td>{{ item.job_title }}</td>
+                <td>{{ item.job_function }}</td>
+                <td>{{ item.city }} {{ item.country }}</td>
+                <td>{{ item.Employee_Size }}</td>
+                <td>{{ item.Industry }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+    </div>
+  
+    <ng-template #blankTable>
+      <p>No data available.</p>
+    </ng-template>
+  </div>
+  
